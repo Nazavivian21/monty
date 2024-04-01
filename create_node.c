@@ -2,16 +2,18 @@
 #include <stdlib.h>
 #include "monty.h"
 /**
- * 
+ * create_node - a function that creates a node.
+ * @var: a variable that stores an integer.
+ * Return: a node.
 */
 stack_t *create_node(int var)
 {
 	stack_t *node;
 
 	node = malloc(sizeof(stack_t));
-	node->n = var;         /* I have dereferenced the node and I am now accessing it's n value*/
-	node ->prev = NULL;
-	node ->next = NULL;
+	node->n = var;
+	node->prev = NULL;
+	node->next = NULL;
 
 	return (node);
 }

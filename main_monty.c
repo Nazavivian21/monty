@@ -11,31 +11,15 @@
 */
 int main(int argc, char *argv[])
 {
-	char *fn;
-	FILE *file;
 	char  line_store[50];
 	char *store_line;
-	int count;
-	char *opcode;
-	char *s_num; 
-	int i_num;
-	stack_t *tail;
-	stack_t *node;
+	int count, i_num;
+	char *opcode, *s_num;
+	FILE *file;
+	stack_t *tail, *node;
 
 	tail = NULL;
-
-	if (argc != 2)
-	{
-		fprintf(stderr,  "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
-	fn = argv[1];
-	file = fopen(fn, "r");
-	if (file == NULL)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", fn);
-		exit(EXIT_FAILURE);
-	}
+	file = _file(argc, argv);
 	count = 0;
 	while (1)
 	{
@@ -55,16 +39,13 @@ int main(int argc, char *argv[])
 		if (strcmp(opcode, "push") == 0)
 		{
 			s_num = _montystrtok(store_line, count);
-
 			i_num = atoi(s_num);
-			printf ("The opcode is: %s and the integer is: %d\n", opcode, i_num);	
-
 			node = create_node(i_num);
-			push(tail, node);
+			push(&tail, node);
 		}
 		if (strcmp(opcode, "pall") == 0)
 		{
-			pall(tail);
+			pall(&tail);
 		}
 	}
 	return (0);

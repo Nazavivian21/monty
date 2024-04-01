@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <stddef.h>
+#include <stdio.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -33,7 +34,9 @@ typedef struct instruction_s
 char *montystrtok(char *line);
 int get_int(char *store_line);
 stack_t *create_node(int var);
-void push(stack_t *tail, stack_t *node);
+void push(stack_t **tail, stack_t *node);
+void pall(stack_t **tail);
 char *_montystrtok(char *line, int line_number);
+FILE *_file(int argc, char *argv[]);
 
 #endif

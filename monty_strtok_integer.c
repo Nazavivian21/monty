@@ -4,8 +4,9 @@
 #include <stdlib.h>
 #include "monty.h"
 /**
- * montystrtok - a function that gets tokens from strings.
+ * _montystrtok - a function that gets tokens from strings.
  * @line: a string variable that stores strings.
+ * @line_number: an integer variable that stores the number of lines.
  * Return: a token.
 */
 
@@ -22,7 +23,7 @@ char *_montystrtok(char *line, int line_number)
 
 	if (int_token == NULL)
 	{
-		fprintf(stderr, "L %d: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer", line_number);
 		exit(EXIT_FAILURE);
 	}
 	return (int_token);

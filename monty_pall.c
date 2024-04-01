@@ -1,15 +1,20 @@
+#include <stdio.h>
 #include "monty.h"
-
-void pall(stack_t *tail)
+/**
+ * pall - a function that prints the contents of a stack.
+ * @tail: the tail of the stack.
+ * Return: nothing
+*/
+void pall(stack_t **tail)
 {
 	stack_t *i;
-	if (tail == NULL)
+
+	if (*tail == NULL)
 	{
 		;
 	}
-	for (i = tail; i != NULL; i = i -> prev)
+	for (i = *tail; i != NULL; i = i->prev)
 	{
-
+		printf("%d\n", i->n);
 	}
-
 }
