@@ -12,10 +12,9 @@
 
 char *_montystrtok(char *line, int line_number)
 {
-	char *delim, *linedup,  *int_token;
+	char *linedup,  *int_token;
 
 	linedup = strdup(line);
-	delim = " ";
 
 	strtok(linedup, delim);
 
@@ -23,7 +22,7 @@ char *_montystrtok(char *line, int line_number)
 
 	if (int_token == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	return (int_token);

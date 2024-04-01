@@ -11,12 +11,10 @@
 
 char *montystrtok(char *line)
 {
-	char *delim;
 	char *token;
 	char *linedup;
 
 	linedup = strdup(line);
-	delim = " \n";
 
 	token = strtok(linedup, delim);
 	return (token);
