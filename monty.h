@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stddef.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -31,4 +32,8 @@ typedef struct instruction_s
 } instruction_t;
 char *montystrtok(char *line);
 int get_int(char *store_line);
+stack_t *create_node(int var);
+void push(stack_t *tail, stack_t *node);
+char *_montystrtok(char *line, int line_number);
+
 #endif

@@ -11,7 +11,7 @@
 int get_int(char *opcode)
 {
 	int i;
-	char *arr[3] = {"pall", "push", NULL};
+	char *arr[] = {"pall", "push", NULL};
 
 	for (i = 0; arr[i] != NULL; i++)
 	{

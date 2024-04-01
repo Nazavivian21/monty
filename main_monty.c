@@ -17,6 +17,12 @@ int main(int argc, char *argv[])
 	char *store_line;
 	int count;
 	char *opcode;
+	char *s_num; 
+	int i_num;
+	stack_t *tail;
+	stack_t *node;
+
+	tail = NULL;
 
 	if (argc != 2)
 	{
@@ -40,12 +46,26 @@ int main(int argc, char *argv[])
 			break;
 		}
 		opcode = montystrtok(store_line);
+
 		if (get_int(opcode) == 1)
 		{
-			printf("L%d: unknown instruction %s\n", count, opcode);
+			fprintf(stderr, "L%d: unknown instruction %s\n\n", count, opcode);
 			exit(EXIT_FAILURE);
 		}
-		/*printf("%d, %s", count, store_line);*/
+		if (strcmp(opcode, "push") == 0)
+		{
+			s_num = _montystrtok(store_line, count);
+
+			i_num = atoi(s_num);
+			printf ("The opcode is: %s and the integer is: %d\n", opcode, i_num);	
+
+			node = create_node(i_num);
+			push(tail, node);
+		}
+		if (strcmp(opcode, "pall") == 0)
+		{
+			pall(tail);
+		}
 	}
 	return (0);
 }

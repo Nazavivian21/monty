@@ -18,6 +18,7 @@ char *montystrtok(char *line)
 	linedup = strdup(line);
 	delim = " ";
 
-	token = strtok(linedup, delim);
+	token = strdup(strtok(linedup, delim));
+	printf("The token is %s\n", token);
 	return (token);
 }
