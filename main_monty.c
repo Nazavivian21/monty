@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
 		if (get_int(opcode) == 1)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n\n", count, opcode);
+			fprintf(stderr, "L%d: unknown instruction %s", count, opcode);
 			exit(EXIT_FAILURE);
 		}
 		if (strcmp(opcode, "push") == 0)
