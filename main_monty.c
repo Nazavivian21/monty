@@ -24,18 +24,17 @@ int main(int argc, char *argv[])
 	while (1)
 	{
 		store_line = fgets(line_store, sizeof(line_store), file);
-		count = count + 1;
 		if (store_line == NULL)
 		{
 			break;
 		}
+		count = count + 1;
 		opcode = montystrtok(store_line);
-
-		if (get_int(opcode) == 1)
+		if (opcode == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s", count, opcode);
-			exit(EXIT_FAILURE);
+			continue;
 		}
+		get_int(opcode, count);
 		if (strcmp(opcode, "push") == 0)
 		{
 			s_num = _montystrtok(store_line, count);

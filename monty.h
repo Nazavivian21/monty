@@ -33,7 +33,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 char *montystrtok(char *line);
-int get_int(char *store_line);
+int get_int(char *opcode, int count);
 stack_t *create_node(int var);
 void push(stack_t **tail, stack_t *node);
 void pall(stack_t **tail);
